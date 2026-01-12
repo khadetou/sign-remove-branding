@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+    <!--
+        Completely override the sign.NameAndSignature template to remove branding.
+        This template is a primary inheritance from web.NameAndSignature.
+        We recreate it with empty sign_label attribute.
+    -->
+    <t t-name="sign_remove_branding.NameAndSignature" t-inherit="web.NameAndSignature"
+        t-inherit-mode="primary">
+        <!-- Add Frame checkbox after the division -->
+        <xpath expr="//div[hasclass('division')]" position="after">
+            <div t-attf-class="col-auto form-check btn border-0 {{ showFrameCheck ? '' : 'd-none'}}">
+                <input type="checkbox" t-attf-class="o_web_frame_button form-check-input"
+                    id="switchFrame" t-att-checked="state.activeFrame" t-on-change="onFrameChange" />
+                <label class="form-check-label" for="switchFrame"
+                    data-tooltip="Include a visual security frame around your signature">Frame</label>
+            </div>
+        </xpath>
+        <!-- Add the frame div WITHOUT branding -->
+        <xpath expr="//div[hasclass('o_signature_stroke')]" position="before">
+            <div t-attf-class="o_sign_frame {{ signFrameClass }}" t-ref="signFrame">
+                <!-- Empty sign_label - this removes "Signed with Odoo Sign" branding -->
+                <p t-att-hash="props.hash" sign_label="" />
+            </div>
+        </xpath>
+        <!-- Add click handler to canvas -->
+        <xpath expr="//canvas[hasclass('o_web_sign_signature')]" position="attributes">
+            <attribute name="t-on-click">onSignatureAreaClick</attribute>
+        </xpath>
+    </t>
+</templates>

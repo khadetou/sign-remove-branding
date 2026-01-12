@@ -1,0 +1,32 @@
+/* Remove "Signed with Odoo Sign" branding from signature frame */
+
+.modal {
+    .o_sign_frame.active {
+        /* Hide the branding text that appears before the frame */
+        :before {
+            content: '' !important;
+            display: none !important;
+        }
+        
+        /* Keep the hash but you can also hide it if needed */
+        /* Uncomment the following lines to also hide the hash */
+        /*
+        :after {
+            content: '' !important;
+            display: none !important;
+        }
+        */
+    }
+}
+
+/* Alternative: Completely hide the frame if you don't want any frame at all */
+/* Uncomment the following to completely remove the frame */
+/*
+.modal {
+    .o_sign_frame {
+        display: none !important;
+        visibility: hidden !important;
+    }
+}
+*/
+
