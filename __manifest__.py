@@ -19,6 +19,7 @@
             'sign_remove_branding/static/src/scss/sign_remove_branding.scss',
             'sign_remove_branding/static/src/xml/sign_name_and_signature_dialog.xml',
             'sign_remove_branding/static/src/js/sign_name_and_signature_dialog.js',
+            'sign_remove_branding/static/src/dialog/thank_you_dialog.xml',
         ],
         'sign.assets_public_sign': [
             'sign_remove_branding/static/src/scss/sign_remove_branding.scss',

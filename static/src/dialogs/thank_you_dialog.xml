@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="sign.ThankYouDialog" t-inherit="sign.ThankYouDialog" t-inherit-mode="extension">
+        <!-- Remove the signup alert section -->
+        <xpath expr="//div[hasclass('alert-info') and hasclass('o_thankyou_message')]" position="replace"/>
+    </t>
+</templates>
