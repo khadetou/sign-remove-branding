@@ -2,6 +2,11 @@
 <odoo>
     <template id="sign_doc_sign_custom" inherit_id="sign.doc_sign"
         name="Custom Sign Document Header">
+        <!-- Remove the first o_logo div -->
+        <xpath
+            expr="//div[@class='o_logo_wrapper justify-content-start d-flex']/div[@class='o_logo d-flex']"
+            position="replace" />
+
         <!-- Replace the o_odoo div with company logo -->
         <xpath expr="//div[@class='o_odoo']" position="replace">
             <div class="o_odoo">
@@ -11,15 +16,5 @@
             </div>
         </xpath>
 
-        <!-- Remove the first o_logo div -->
-        <xpath
-            expr="//div[@class='o_logo_wrapper justify-content-start d-flex']/div[@class='o_logo d-flex']"
-            position="replace" />
-
-        <!-- Optional: Center the logo wrapper -->
-        <xpath expr="//div[@class='o_logo_wrapper justify-content-start d-flex']"
-            position="attributes">
-            <attribute name="class">o_logo_wrapper justify-content-center d-flex w-100</attribute>
-        </xpath>
     </template>
 </odoo>
