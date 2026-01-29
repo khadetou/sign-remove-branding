@@ -4,12 +4,22 @@
         name="Custom Sign Document Header">
         <!-- Replace the o_odoo div with company logo -->
         <xpath expr="//div[@class='o_odoo']" position="replace">
-            <div class="o_logo d-flex">
+            <div class="o_odoo">
                 <a href="/">
                     <img t-attf-src="/logo.png?company={{ company_id }}" alt="Logo" />
                 </a>
             </div>
         </xpath>
 
+        <!-- Remove the first o_logo div -->
+        <xpath
+            expr="//div[@class='o_logo_wrapper justify-content-start d-flex']/div[@class='o_logo d-flex']"
+            position="replace" />
+
+        <!-- Optional: Center the logo wrapper -->
+        <xpath expr="//div[@class='o_logo_wrapper justify-content-start d-flex']"
+            position="attributes">
+            <attribute name="class">o_logo_wrapper justify-content-center d-flex w-100</attribute>
+        </xpath>
     </template>
 </odoo>
