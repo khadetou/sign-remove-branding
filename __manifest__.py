@@ -13,7 +13,9 @@
     'author': 'Custom',
     'website': '',
     'depends': ['sign'],
-    'data': [],
+    'data': [
+        "views/sign_request_template.xml",
+        ],
     'assets': {
         'web.assets_backend': [
             'sign_remove_branding/static/src/scss/sign_remove_branding.scss',

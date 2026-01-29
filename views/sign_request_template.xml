@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <!-- Override for doc_sign template - Replace Odoo branding with company logo -->
+    <t t-name="sign.doc_sign" t-inherit="sign.doc_sign" t-inherit-mode="extension">
+        <!-- Replace the o_odoo div with company logo -->
+        <xpath expr="//div[@class='o_odoo']" position="replace">
+            <div class="o_logo d-flex">
+                <a href="/"><img t-attf-src="/logo.png?company={{ company_id }}" alt="Logo"/></a>
+            </div>
+        </xpath>
+        
+    </t>
+</templates>
